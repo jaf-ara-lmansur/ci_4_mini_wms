@@ -66,6 +66,7 @@ class ItemController extends BaseController
             'min_stock' => (int) $this->request->getPost('min_stock'),
             'current_stock' => (int) $this->request->getPost('current_stock')
         ];
+        $this->itemModel->useUpdateValidationRules($id);
         if ($this->itemModel->update($id, $payload) === false) {
             return redirect()->back()->withInput()->with('errors', $this->itemModel->errors());
         }

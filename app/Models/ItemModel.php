@@ -33,12 +33,19 @@ class ItemModel extends Model
 
     // Validation
     protected $validationRules      = [
-        'sku' => 'required|min_length[3]|max_length[50]|is_unique[items.sku,id,{id}]',
+        'sku' => 'required|min_length[3]|max_length[50]|is_unique[items.sku]',
         'item_name' => 'required|min_length[3]|max_length[100]',
         'category' => 'required|min_length[3]|max_length[100]',
         'min_stock' => 'required|integer|greater_than_equal_to[0]',
         'current_stock' => 'required|integer|greater_than_equal_to[0]',
     ];
+
+    public function useUpdateValidationRules(int $id): self
+    {
+        $this->validationRules['sku'] = 'required|min_length[3]|max_length[50]|is_unique[items.sku,id,' . $id . ']';
+        return $this;
+    }
+
     protected $validationMessages   = [];
     protected $skipValidation       = false;
     protected $cleanValidationRules = true;
