@@ -34,6 +34,11 @@
             </div>
 
             <div class="form-group">
+                <label for="category">Kategori:</label>
+                <input type="text" id="category" name="category" value="<?= old('category') ?>" required>
+            </div>
+
+            <div class="form-group">
                 <label for="min_stock">Minimum Stock:</label>
                 <input type="number" id="min_stock" name="min_stock" min="0" value="<?= old('min_stock', 0) ?>" required>
             </div>

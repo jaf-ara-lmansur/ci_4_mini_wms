@@ -33,6 +33,7 @@ class ItemController extends BaseController
         $payload =[
             'sku' => trim((string) $this->request->getPost('sku')),
             'item_name' => trim((string) $this->request->getPost('item_name')),
+            'category' => trim((string) $this->request->getPost('category')),
             'min_stock' => (int) $this->request->getPost('min_stock'),
             'current_stock' => (int) $this->request->getPost('current_stock')
         ];
@@ -61,6 +62,7 @@ class ItemController extends BaseController
             'id' => $id,
             'sku' => trim((string) $this->request->getPost('sku')),
             'item_name' => trim((string) $this->request->getPost('item_name')),
+            'category' => trim((string) $this->request->getPost('category')),
             'min_stock' => (int) $this->request->getPost('min_stock'),
             'current_stock' => (int) $this->request->getPost('current_stock')
         ];
