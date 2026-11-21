@@ -62,7 +62,7 @@
 <body>
     <div class="container">
         <div class="topbar">
-            <h1><?esc($title??'Manage Barang')?></h1>
+            <h1><?= esc($title??'Manage Barang') ?></h1>
             <a href="<?php echo site_url('items/create') ?>" class="btn btn-primary mb-3">Tambah Barang</a>
             </div>
 

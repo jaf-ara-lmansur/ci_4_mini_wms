@@ -17,7 +17,7 @@ class ItemController extends BaseController
     public function index()
     {
         $data = [
-            'title'=> 'Master Barang (Items)',
+            'title'=> 'Master Barang',
             'items'=> $this->itemModel->orderBy('id', 'ASC')->findAll()
         ];
         return view('items/index', $data);
@@ -25,7 +25,7 @@ class ItemController extends BaseController
 
     public function create()
     {
-        return view('items/create', ['title' => 'Tambah Master Barang,']);
+        return view('items/create', ['title' => 'Tambah Master Barang']);
     }
 
     public function store()
