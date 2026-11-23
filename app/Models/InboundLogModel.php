@@ -16,7 +16,6 @@ class InboundLogModel extends Model
         'item_id',
         'quantity',
         'qa_status',
-        'reference_no',
         'notes'
     ];
 
@@ -27,7 +26,7 @@ class InboundLogModel extends Model
     protected array $castHandlers = [];
 
     // Dates
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
@@ -38,7 +37,6 @@ class InboundLogModel extends Model
         'item_id' => 'required|integer|is_not_unique[items.id]',
         'quantity' => 'required|integer|greater_than[0]',
         'qa_status' => 'required|in_list[passed,hold,rejected]',
-        'reference_no' => 'permit_empty|max_length[100]',
         'notes' => 'permit_empty|max_length[455]'
     ];
     protected $validationMessages   = [];

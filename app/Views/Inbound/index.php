@@ -35,24 +35,19 @@
                 <th>Item Name</th>
                 <th>Quantity</th>
                 <th>QA Status</th>
-                <th>Reference No</th>
                 <th>Notes</th>
             </tr>
         </thead>
         <tbody>
             <?php if (! empty($logs)): ?>
                 <?php foreach ($logs as $i => $log): ?>
-                <tr>
-                    <td colspan="8">No inbound logs found.</td>
-                </tr>
-          
+            <tr>
          <td><?=esc($log['id']) ?></td>
                 <td><?=esc($log['item_id']) ?></td>
                 <td><?=esc($log['sku']) ?></td>
                 <td><?=esc($log['item_name']) ?></td>
                 <td><?=esc($log['quantity']) ?></td>
                 <td><?=esc($log['qa_status']) ?></td>
-                <td><?=esc($log['reference_no']) ?></td>
                 <td><?=esc($log['notes']) ?></td>
             </tr>
               <?php endforeach; ?>

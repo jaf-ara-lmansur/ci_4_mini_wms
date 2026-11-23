@@ -16,7 +16,7 @@ $routes->group('items',static function($routes){
 
 $routes->group('inbound',static function($routes){
         $routes->get('/','InboundController::index');
-        $routes->post('store/(:num)','InboundController::store/$1');
-        $routes->post('approve/(:num)','InboundController::approve/$1');
+        $routes->post('store','InboundController::store');
+        $routes->get('create','InboundController::create');
         $routes->post('reject/(:num)','InboundController::reject/$1');
 });

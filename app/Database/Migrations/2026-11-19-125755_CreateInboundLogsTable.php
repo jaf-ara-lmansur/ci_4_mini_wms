@@ -26,8 +26,8 @@ class CreateInboundLogsTable extends Migration
             ],
             'qa_status' => [
                 'type' => 'ENUM',
-                'constraint' => ['pending', 'approved', 'rejected'],
-                'default' => 'pending',
+                'constraint' => ['passed', 'hold', 'rejected'],
+                'default' => 'passed',
             ],
             'notes' => [
                 'type' => 'TEXT',
