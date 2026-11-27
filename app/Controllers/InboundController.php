@@ -22,7 +22,7 @@ public function __construct()
     public function index()
     {
         $logs = $this->inboundModel
-        ->select('inbound_logs.*,items.sku, items.item_name, items.current_stock')
+        ->select('inbound_logs.*,items.sku, items.item_name')
         ->join('items', 'inbound_logs.item_id = items.id', 'left')
         ->orderBy('inbound_logs.id', 'ASC')
         ->findAll();

@@ -36,6 +36,7 @@
                 <th>Quantity</th>
                 <th>QA Status</th>
                 <th>Notes</th>
+                <th>Date</th>
             </tr>
         </thead>
         <tbody>
@@ -49,6 +50,7 @@
                 <td><?=esc($log['quantity']) ?></td>
                 <td><?=esc($log['qa_status']) ?></td>
                 <td><?=esc($log['notes']) ?></td>
+                <td><?= esc($log['created_at']) ?></td>
             </tr>
               <?php endforeach; ?>
             <?php else: ?>
